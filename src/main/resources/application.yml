@@ -1,0 +1,22 @@
+
+# TODO 配置数据源相关信息
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mybatis?useSSL=false
+    username: root
+    password: 123456
+
+# 开启日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      # id生成策略全局配置
+      id-type: assign_id
+      # 逻辑删除字段，标记当前记录是否被删除
+      logic-delete-field: deleted
+      logic-not-delete-value: 0
+      logic-delete-value: 1
